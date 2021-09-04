@@ -15,3 +15,5 @@ INSERT INTO NotifiedUsers VALUES ("123412345", "123412345");
 select * from NotifiedUsers;
 
 drop table NotifiedUsers;
+
+DELETE FROM NotifiedUsers WHERE identity_number=1234567890;
