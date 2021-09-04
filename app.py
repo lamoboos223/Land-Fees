@@ -17,8 +17,7 @@ if spaces >= 5000:
     if isValid:
         count = mysqldb.isExists(identity_number, instrument_number)
         if count == 0:
-            # mysqldb.add(identity_number, instrument_number)
+            mysqldb.add(identity_number, instrument_number)
             kafka_producer.produce(land_info)
-
         else:
             print(" the user already notified")
