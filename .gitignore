@@ -1,1 +1,5 @@
 __pycache__
+init.sql
+*.log
+mysql
+conf

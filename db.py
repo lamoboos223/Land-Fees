@@ -1,13 +1,15 @@
 import mysql.connector
 
+
 class mysqldb:
 
     def __init__(self):
         self.mydb = mysql.connector.connect(
-        host="localhost",
-        user="sa",
-        password="sa",
-        database="LandFees"
+            host="127.0.0.1",
+            user="root",
+            password="pass",
+            port="33066",
+            database="LandFees"
         )
 
         self.mycursor = self.mydb.cursor()
@@ -21,14 +23,10 @@ class mysqldb:
 
         print(self.mycursor.rowcount, "record inserted.")
 
-    
     def isExists(self, identity_number, instrument_number):
-        sql = "SELECT count(*)  FROM NotifiedUsers WHERE 'identity_number'=%s AND 'instrument_number'=%s"
+        sql = "SELECT count(*)  FROM NotifiedUsers WHERE identity_number=%s AND instrument_number=%s"
         val = (identity_number, instrument_number)
         self.mycursor.execute(sql, val)
 
-        myresult = self.mycursor.fetchall()
-
-        for x in myresult:
-            print(x)
-            return x
+        myresult = self.mycursor.fetchone()
+        return myresult[0]
