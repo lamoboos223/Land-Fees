@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  mysqldb:
+    container_name: mysql
+    image: mysql:5.7
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./init.sql:/data/application/init.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sa
+      MYSQL_DATABASE: LandFees
+      MYSQL_USER: sa
+      MYSQL_PASSWORD: sa
+    ports:
+      - "3306:3306"
