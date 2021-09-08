@@ -8,6 +8,7 @@ balady_api = Balady.FasehAPI()
 mysqldb = db.mysqldb()
 kafka_producer = KafkaClient.Producer()
 
+# this should be read from kafka topic that grpc produced
 land_info = moj_api.getOwnerData("1996", "2021")
 identity_number = land_info["identity_number"]
 instrument_number = land_info["instrument_number"]
