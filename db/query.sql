@@ -1,4 +1,6 @@
-mysql -u root
+mysql -u root -p
+
+root
 
 create database LandFees;
 

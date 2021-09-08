@@ -5,11 +5,11 @@ services:
     container_name: mysql
     image: mysql:latest
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./db/mysql:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: pass
-      MYSQL_DATABASE: db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: LandFees
       MYSQL_USER: user
       MYSQL_PASSWORD: pass
     ports:
