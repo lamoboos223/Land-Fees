@@ -3,3 +3,5 @@ init.sql
 *.log
 mysql
 conf
+**/logs/**
+kafka_connect/confluent-logs/**

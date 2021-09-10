@@ -15,7 +15,7 @@ class mysqldb:
         self.mycursor = self.mydb.cursor()
 
     def add(self, identity_number, instrument_number):
-        sql = "INSERT INTO NotifiedUsers (identity_number, instrument_number) VALUES (%s, %s)"
+        sql = "INSERT INTO KAFKA_NOTIFIED_USERS (identity_number, instrument_number) VALUES (%s, %s)"
         val = (identity_number, instrument_number)
         self.mycursor.execute(sql, val)
 
@@ -24,7 +24,7 @@ class mysqldb:
         print(self.mycursor.rowcount, "record inserted.")
 
     def isExists(self, identity_number, instrument_number):
-        sql = "SELECT count(*)  FROM NotifiedUsers WHERE identity_number=%s AND instrument_number=%s"
+        sql = "SELECT count(*)  FROM KAFKA_NOTIFIED_USERS WHERE identity_number=%s AND instrument_number=%s"
         val = (identity_number, instrument_number)
         self.mycursor.execute(sql, val)
 
